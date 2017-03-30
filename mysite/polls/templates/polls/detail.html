@@ -1,0 +1,12 @@
+<!--The template system uses the dot-lookup syntax to access variable attributes. below {{question.question_text}}, first Django does a dictionary lookup on the object question, on failing this it tries a attribute lookup -which works here. If attribute lookup fails it would
+have tried a list-index lookup -->
+
+
+
+<h1>{{question.question_text}}</h1>
+<ul>
+{% for choice in question.choice_set.all %}
+	<li>{{choice.choice_text }}</li>
+
+{% endfor %}
+</ul>
